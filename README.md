@@ -1,8 +1,10 @@
 
 
-## Please read the documentation if this doc is not working. documentation linked below
+# Please read the all documentation if this doc is not working. documentation linked below step by step
 
-# package config
+https://pub.dev/packages/msix
+
+## package config
 
 ### pubspec.yaml
 #### msix_config:
