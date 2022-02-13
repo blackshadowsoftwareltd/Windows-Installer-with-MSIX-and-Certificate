@@ -25,6 +25,8 @@ New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso 
 Set-Location Cert:\CurrentUser\My
 Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 
+### predefined certificate path
+G:\Windows-Installer-with-NSIX-and-Certificate\assets\utils\cert.pfx
 ### Thumbprint
 4E846D68B6C60EB6B86D5DEFF34EC3739AA03508
 
@@ -32,9 +34,6 @@ Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
 ### doc
 $password = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText 
 Export-PfxCertificate -cert "Cert:\CurrentUser\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $password
-
-### predefined certificate path
-G:\Windows-Installer-with-NSIX-and-Certificate\assets\utils\cert.pfx
 
 ### ready to run
 $password = ConvertTo-SecureString -String 1234 -Force -AsPlainText 
