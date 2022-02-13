@@ -1,6 +1,6 @@
 
 
-# Please read the all documentation if this doc is not working. documentation linked below step by step
+# Please read the all documentation if this doc is not working. The documentation linked below step by step
 
 https://pub.dev/packages/msix
 
@@ -55,7 +55,7 @@ $password = ConvertTo-SecureString -String 1234 -Force -AsPlainText
 Export-PfxCertificate -cert "Cert:\CurrentUser\My\4E846D68B6C60EB6B86D5DEFF34EC3739AA03508" -FilePath G:\Windows-Installer-with-NSIX-and-Certificate\assets\utils\cert.pfx -Password $password
 
 <div class="row"> 
-   <img src="screenShots/s3.1.png" alt="Screenshot 1" width="800" height="350"> 
+   <img src="screenShots/s3.1.png" alt="Screenshot 1" width="800" height="320"> 
 </div>
 
 ## Second step
