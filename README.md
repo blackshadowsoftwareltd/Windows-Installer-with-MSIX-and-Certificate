@@ -105,7 +105,14 @@ https://community.flexera.com/t5/InstallShield-Knowledge-Base/How-to-add-certifi
 #### flutter build windows --release
 #### flutter pub run msix:create
 ### msix created: build\windows\runner\Release\windows_installer_msix_dertificate.msix
+ 
+## ERROR 
+### If you follow my process. 
+### I hope this error will not face the: This app package is not signed with a trusted certificate. 
 
+<div class="row"> 
+   <img src="screenShots/err.png" alt="Screenshot 1" width="700" height="500"> 
+</div>
 
 
 
