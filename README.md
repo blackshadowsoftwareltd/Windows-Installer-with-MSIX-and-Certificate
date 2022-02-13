@@ -2,7 +2,7 @@
 
 # Please read the all documentation if this doc is not working. The documentation linked below step by step
 
-https://pub.dev/packages/msix
+### https://pub.dev/packages/msix
 
 ## package config
 
@@ -27,6 +27,7 @@ https://pub.dev/packages/msix
 ### PowerShell
 
 New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName "Your friendly name goes here" -CertStoreLocation "Cert:\CurrentUser\My" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
+
  <div class="row"> 
    <img src="screenShots/s2.png" alt="Screenshot 1" width="800" height="400"> 
  </div>
@@ -48,7 +49,7 @@ G:\Windows-Installer-with-NSIX-and-Certificate\assets\utils\cert.pfx
 ### Export a certificate. Password usage
 ### doc
 $password = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText 
-Export-PfxCertificate -cert "Cert:\CurrentUser\My\<Certificate Thumbprint>" -FilePath <FilePath>.pfx -Password $password
+Export-PfxCertificate -cert "Cert:\CurrentUser\My\<Certificate Thumbprint>" -FilePath < FilePath >.pfx -Password $password
 
 ### ready to run
 $password = ConvertTo-SecureString -String 1234 -Force -AsPlainText 
