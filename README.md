@@ -1,5 +1,7 @@
 
 
+## Please read the documentation if this doc is not working. documentation linked below
+
 # package config
 
 ### pubspec.yaml
@@ -50,6 +52,10 @@ Export-PfxCertificate -cert "Cert:\CurrentUser\My\<Certificate Thumbprint>" -Fil
 $password = ConvertTo-SecureString -String 1234 -Force -AsPlainText 
 Export-PfxCertificate -cert "Cert:\CurrentUser\My\4E846D68B6C60EB6B86D5DEFF34EC3739AA03508" -FilePath G:\Windows-Installer-with-NSIX-and-Certificate\assets\utils\cert.pfx -Password $password
 
+<div class="row"> 
+   <img src="screenShots/s3.1.png" alt="Screenshot 1" width="800" height="350"> 
+</div>
+
 ## Second step
 https://community.flexera.com/t5/InstallShield-Knowledge-Base/How-to-add-certificates-to-the-Trusted-Root-Certification/ta-p/4118
 
@@ -87,7 +93,7 @@ https://community.flexera.com/t5/InstallShield-Knowledge-Base/How-to-add-certifi
   
 <div class="row"> 
    <img src="screenShots/s8.png" alt="Screenshot 1" width="500" height="250"> 
-   <img src="screenShots/s9.png" alt="Screenshot 1" width="280" height="180"> 
+   <img src="screenShots/s9.png" alt="Screenshot 1" width="280" height="160"> 
 </div>  
    
 
