@@ -7,15 +7,18 @@
 ## package config
 
 ### pubspec.yaml
-#### msix_config:
-####   publisher: CN=Blackshadow
-####   display_name: Blackshadow
-####   publisher_display_name: Blackshadow
-####   identity_name: MyCompany.MySuite.MyApp
-####   msix_version: 1.0.0.0
-####   logo_path: G:\Windows-Installer-with-NSIX-and-Certificate\assets\utils\logo.png
-####   certificate_path: G:\Windows-Installer-with-NSIX-and-Certificate\assets\utils\cert.pfx
-####   certificate_password: 1234
+
+```
+msix_config:
+  publisher: CN=Blackshadow
+  display_name: Blackshadow
+  publisher_display_name: Blackshadow
+  identity_name: MyCompany.MySuite.MyApp
+  msix_version: 1.0.0.0
+  logo_path: G:\Windows-Installer-with-NSIX-and-Certificate\assets\utils\logo.png
+  certificate_path: G:\Windows-Installer-with-NSIX-and-Certificate\assets\utils\cert.pfx
+  certificate_password: 1234 
+```
 
 ## First step
  <div class="row"> 
@@ -26,7 +29,9 @@
 
 ### PowerShell
 
+```
 New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso Corporation, C=US" -KeyUsage DigitalSignature -FriendlyName "Your friendly name goes here" -CertStoreLocation "Cert:\CurrentUser\My" -TextExtension @("2.5.29.37={text}1.3.6.1.5.5.7.3.3", "2.5.29.19={text}")
+```
 
  <div class="row"> 
    <img src="screenShots/s2.png" alt="Screenshot 1" width="800" height="400"> 
@@ -34,8 +39,10 @@ New-SelfSignedCertificate -Type Custom -Subject "CN=Contoso Software, O=Contoso 
  
 ### PowerShell
 
+```
 Set-Location Cert:\CurrentUser\My
 Get-ChildItem | Format-Table Subject, FriendlyName, Thumbprint
+```
 
  <div class="row"> 
    <img src="screenShots/s3.png" alt="Screenshot 1" width="800" height="250"> 
@@ -47,14 +54,16 @@ G:\Windows-Installer-with-NSIX-and-Certificate\assets\utils\cert.pfx
 4E846D68B6C60EB6B86D5DEFF34EC3739AA03508
 
 ### Export a certificate. Password usage
-### doc
+### doc have to replace the thumbprint & certificate path
+```
 $password = ConvertTo-SecureString -String <Your Password> -Force -AsPlainText 
 Export-PfxCertificate -cert "Cert:\CurrentUser\My\<Certificate Thumbprint>" -FilePath < FilePath >.pfx -Password $password
-
+```
 ### ready to run
+```
 $password = ConvertTo-SecureString -String 1234 -Force -AsPlainText 
 Export-PfxCertificate -cert "Cert:\CurrentUser\My\4E846D68B6C60EB6B86D5DEFF34EC3739AA03508" -FilePath G:\Windows-Installer-with-NSIX-and-Certificate\assets\utils\cert.pfx -Password $password
-
+```
 <div class="row"> 
    <img src="screenShots/s3.1.png" alt="Screenshot 1" width="800" height="320"> 
 </div>
@@ -101,11 +110,14 @@ https://community.flexera.com/t5/InstallShield-Knowledge-Base/How-to-add-certifi
    
 
 ## Third step
-#### flutter clean
-#### flutter build windows --release
-#### flutter pub run msix:create
+```
+flutter clean
+flutter build windows --release
+flutter pub run msix:create
+```
+```
 ### msix created: build\windows\runner\Release\windows_installer_msix_dertificate.msix
- 
+```
 ## ERROR 
 ### If you follow my process. 
 ### I hope this error will not face the: This app package is not signed with a trusted certificate. 
